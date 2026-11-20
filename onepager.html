@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Displacement near transit corridors — one-pager</title>
+<style>
+/* Scope of Work Task 5: "a one-pager PDF that can be printed".
+   Designed to print on one sheet of US Letter in black and white without losing
+   meaning, and to meet WCAG 2.1 AA on screen. No colour carries meaning alone. */
+:root{
+  --ink:#16202c; --muted:#4a5a6b; --rule:#c8d2dc; --bg:#ffffff;
+  --accent:#1b4f7f; --flag:#8a1c1c;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f5;color:var(--ink);font-family:var(--sans);line-height:1.45}
+.sheet{
+  width:8.5in;min-height:11in;margin:18px auto;padding:0.6in 0.65in;
+  background:var(--bg);box-shadow:0 2px 14px rgba(0,0,0,.14);
+}
+h1{font-size:23px;line-height:1.15;margin:0 0 4px;letter-spacing:-.01em}
+.standfirst{font-family:var(--serif);font-size:13.5px;color:var(--muted);margin:0 0 14px;max-width:62ch}
+.rule{border:0;border-top:2px solid var(--ink);margin:0 0 12px}
+.banner{
+  border:1px solid var(--rule);border-left:4px solid var(--flag);
+  padding:7px 11px;font-size:10.5px;color:var(--muted);margin:0 0 14px
+}
+.banner b{color:var(--flag);text-transform:uppercase;letter-spacing:.07em;font-size:9.5px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:16px 0 6px}
+p{margin:0 0 9px;font-size:12px}
+.cols{display:flex;gap:22px;align-items:flex-start}
+.cols>div{flex:1;min-width:0}
+table{border-collapse:collapse;width:100%;font-size:11px;margin:4px 0 10px}
+th,td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+th{font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+.bar{display:inline-block;height:9px;background:var(--accent);vertical-align:middle;margin-right:5px}
+.supp{color:var(--flag);font-size:10px}
+.limits{border:1px solid var(--rule);background:#f6f8fa;padding:10px 12px;margin-top:6px}
+.limits h2{margin-top:0}
+.limits p{font-size:11px;color:var(--muted);margin-bottom:6px}
+.foot{margin-top:16px;border-top:1px solid var(--rule);padding-top:8px;font-size:9.5px;color:var(--muted)}
+@media print{
+  body{background:#fff}
+  .sheet{box-shadow:none;margin:0;width:auto;min-height:0;padding:0.5in}
+  .bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <h1>Displacement near high-frequency transit corridors</h1>
+  <p class="standfirst">What the analysis measures, what it found, and what it cannot tell you on its own.</p>
+  <hr class="rule">
+
+  <div class="banner">
+    <b>Demonstration</b> &nbsp;Every figure on this sheet is synthetic, generated from a fixed seed to
+    exercise the template. It is not Metropolitan Council data, not Data&nbsp;Axle data, and not a
+    finding about any Twin Cities community. This sheet shows the <em>format</em> a Task&nbsp;5
+    one-pager takes, not a result.
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>What was measured</h2>
+      <p>
+        Household movement in and out of station areas along the region's high-frequency transit
+        corridors, each year from 2008 to 2025, compared against control corridors without frequent
+        transit. Movement is broken down by income relative to area median and by the phase the
+        transit project had reached &mdash; pre-development, planning, construction, or operation.
+      </p>
+      <p>
+        Comparing a corridor against a control corridor is what separates displacement pressure from
+        the ordinary level of household movement that happens everywhere.
+      </p>
+
+      <h2>Net household change by project phase</h2>
+      <table>
+        <caption class="supp" style="caption-side:bottom;text-align:left;padding-top:4px">
+          Illustrative values. Negative means net outflow.
+        </caption>
+        <thead>
+          <tr><th scope="col">Project phase</th><th scope="col" style="text-align:right">Per 1,000 households</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pre-development</td><td class="n"><span class="bar" style="width:14px"></span>&minus;3</td></tr>
+          <tr><td>Planning</td><td class="n"><span class="bar" style="width:30px"></span>&minus;7</td></tr>
+          <tr><td>Construction</td><td class="n"><span class="bar" style="width:66px"></span>&minus;16</td></tr>
+          <tr><td>Operation</td><td class="n"><span class="bar" style="width:22px"></span>&minus;5</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--muted)">
+        The bar length repeats the number beside it; neither carries meaning the other does not, so the
+        table reads the same in black and white and to a screen reader.
+      </p>
+    </div>
+
+    <div>
+      <h2>Where values are missing</h2>
+      <p>
+        Some station areas carry no published figure. That is deliberate. A station area is
+        <strong>suppressed</strong> when the number of households behind the figure falls below the
+        publication threshold, because a small cell on a public map can identify a household.
+      </p>
+      <p>
+        A second station area in the same corridor may also be suppressed even when its own count is
+        large enough. Without that, a single suppressed value could be recovered by subtracting the
+        published ones from the corridor total.
+      </p>
+      <p>
+        <strong>A suppressed value is never shown as zero</strong>, and never left as a blank that the
+        eye reads as &ldquo;no displacement here.&rdquo;
+      </p>
+
+      <div class="limits">
+        <h2>What this does not tell you</h2>
+        <p>
+          <strong>It does not tell you that any household was forced to move.</strong> Household
+          movement is an indicator of displacement, not displacement itself. A consumer-data record
+          cannot distinguish an eviction from a promotion.
+        </p>
+        <p>
+          <strong>It does not establish that transit caused the movement.</strong> Comparing a corridor
+          against a control corridor narrows the field of explanations. It does not close it.
+        </p>
+        <p>
+          The Council's own Anti-Displacement Framework holds that displacement is ultimately defined
+          by the residents of an impacted community. This analysis is one input to that conversation,
+          not a substitute for it.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Explore the data yourself</h2>
+  <p>
+    The interactive dashboard carries the same figures at station-area, corridor and regional level,
+    filterable by year, transit mode and project phase, with every view available as a table and a
+    data export as well as a map.
+  </p>
+
+  <div class="foot">
+    Prepared by ChiResearch Technologies, LLC as a work sample for Metropolitan Council RFP 26P232,
+    Displacement Dashboard &mdash; Dashboard Development, under Addendum No.&nbsp;1, Response&nbsp;4.
+    Synthetic data throughout. Regenerated annually by one documented command; see
+    <code>docs/ANNUAL_UPDATE_RUNBOOK.md</code>.
+  </div>
+
+</div>
+</body>
+</html>
